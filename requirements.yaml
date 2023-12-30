@@ -1,0 +1,18 @@
+name: dacon_gps
+channels:
+  - conda-forge
+  - pyg
+  - nvidia/label/cuda-11.7.0
+  - pytorch
+dependencies:
+  - python=3.10
+  - pytorch=2.0.0
+  - cudatoolkit=11.7
+  - pytorch-cuda=11.7
+  - rdkit
+  - torchvision
+  - torchaudio
+  - tqdm
+  - pip
+  pip:
+    - omegaconf

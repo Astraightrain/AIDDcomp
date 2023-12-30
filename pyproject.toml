@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gps"
+version = "1.0.0"
+description = "Dacon gps"
+readme = "README.md"
+authors = [
+    { name = "kerobro", email = "kjw7211@snu.ac.kr" },
+]
+keywords = ["python"]
+requires-python = ">=3.8"
+dependencies = [
+]
+
+[project.optional-dependencies]
+dev = ["pylint", "black", "isort", "pre-commit", "pytest"]
+
+[tool.pylint.messages_control]
+max-line-length = 120
+disable = "too-many-arguments"
+extension-pkg-whitelist = "rdkit"
+
+[tool.pylint.format]
+good-names = ["i", "j", "k", "e", "ex", "Run", "_", "df", "oe", "G"]
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+addopts = "-ra" # Explain all skipped, failed, errored tests
