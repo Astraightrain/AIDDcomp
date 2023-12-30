@@ -1,4 +1,4 @@
-# dacon Graph Transformer(GPS) multitask model inference module
+# 1st AIDD competiion: Graph Transformer(GPS) multitask learning model inference code
 
 ## Environment setting & installation
 ```bash

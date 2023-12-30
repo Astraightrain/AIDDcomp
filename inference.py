@@ -51,22 +51,8 @@ if __name__=="__main__":
     encoder = GPSEncoder()
     taskhead = GraphHead()
 
-    checkpoint_5 = [
-        #hlm
-        './saved_model/ensemble5_hlm_1.ckpt',
-        './saved_model/ensemble5_hlm_2.ckpt',
-        './saved_model/ensemble5_hlm_3.ckpt',
-        './saved_model/ensemble5_hlm_4.ckpt',
-        './saved_model/ensemble5_hlm_5.ckpt',
-
-        #mlm
-        './saved_model/ensemble5_mlm_1.ckpt',
-        './saved_model/ensemble5_mlm_2.ckpt',
-        './saved_model/ensemble5_mlm_3.ckpt',
-        './saved_model/ensemble5_mlm_4.ckpt',
-        './saved_model/ensemble5_mlm_5.ckpt',
-    ]
-
+    checkpoint_5 = [f'./saved_model/ensemble5_{task}lm_{i}.ckpt' for task in ['h','m'] for i in range(1,6)]
+        
     mlms_5 = []
     hlms_5 = []
     for check in tqdm(checkpoint_5, desc = 'Ensemble 5 models'):
@@ -89,29 +75,7 @@ if __name__=="__main__":
     df['HLM_5'] = ensemble_hlms_5
     df['MLM_5'] = ensemble_mlms_5
     
-    checkpoint_10 = [
-        './saved_model/ensemble10_hlm_1.ckpt',
-        './saved_model/ensemble10_hlm_2.ckpt',
-        './saved_model/ensemble10_hlm_3.ckpt',
-        './saved_model/ensemble10_hlm_4.ckpt',
-        './saved_model/ensemble10_hlm_5.ckpt',
-        './saved_model/ensemble10_hlm_6.ckpt',
-        './saved_model/ensemble10_hlm_7.ckpt',
-        './saved_model/ensemble10_hlm_8.ckpt',
-        './saved_model/ensemble10_hlm_9.ckpt',
-        './saved_model/ensemble10_hlm_10.ckpt',
-
-        './saved_model/ensemble10_mlm_1.ckpt',
-        './saved_model/ensemble10_mlm_2.ckpt',
-        './saved_model/ensemble10_mlm_3.ckpt',
-        './saved_model/ensemble10_mlm_4.ckpt',
-        './saved_model/ensemble10_mlm_5.ckpt',
-        './saved_model/ensemble10_mlm_6.ckpt',
-        './saved_model/ensemble10_mlm_7.ckpt',
-        './saved_model/ensemble10_mlm_8.ckpt',
-        './saved_model/ensemble10_mlm_9.ckpt',
-        './saved_model/ensemble10_mlm_10.ckpt',   
-    ]
+    checkpoint_10 = [f'./saved_model/ensemble10_{task}lm_{i}.ckpt' for task in ['h','m'] for i in range(1,11)]
 
     mlms_10 = []
     hlms_10 = []
